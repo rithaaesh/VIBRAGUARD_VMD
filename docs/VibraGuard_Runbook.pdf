@@ -1,0 +1,232 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [7 0 R 9 0 R 11 0 R 13 0 R 15 0 R] /Count 5 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Length 2444 >>
+stream
+BT
+0.04 0.28 0.31 rg /F1 18 Tf 42 800 Td (VibraGuard Runbook) Tj
+0.04 0.35 0.38 rg /F1 12 Tf 42 772 Td (Purpose) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 752 Td (This runbook explains how to install, start, verify, and extend the VibraGuard) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 738 Td (predictive-maintenance prototype on Windows PowerShell.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 718 Td (The included sample CSV files are synthetic project fixtures. They are clearly demo data and) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 704 Td (must not be presented as certified industrial measurements.) Tj
+0.04 0.35 0.38 rg /F1 12 Tf 42 684 Td (1. Install) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 664 Td (Open PowerShell in `D:\\mfc-anti`:) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 644 Td (python -m venv .venv) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 630 Td (.\\.venv\\Scripts\\Activate.ps1) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 616 Td (python -m pip install --upgrade pip) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 602 Td (python -m pip install -r backend\\requirements.txt) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 588 Td (Set-Location frontend) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 574 Td (npm install) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 560 Td (Set-Location ..) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 540 Td (If PowerShell blocks activation for the current user:) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 520 Td (Set-ExecutionPolicy -Scope CurrentUser RemoteSigned) Tj
+0.04 0.35 0.38 rg /F1 12 Tf 42 500 Td (2. Start the services) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 480 Td (Use two PowerShell windows.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 460 Td (Backend window, from the repository root:) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 440 Td (.\\.venv\\Scripts\\Activate.ps1) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 426 Td (python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 406 Td (Frontend window, from the repository root:) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 386 Td (Set-Location frontend) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 372 Td (npm run dev -- --host 127.0.0.1) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 352 Td (Open:) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 332 Td (- Dashboard: http://127.0.0.1:5173/) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 318 Td (- API documentation: http://127.0.0.1:8000/docs) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 304 Td (- Health endpoint: http://127.0.0.1:8000/api/health) Tj
+0.04 0.35 0.38 rg /F1 12 Tf 42 284 Td (3. Verify the installation) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 2751 >>
+stream
+BT
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 794 Td (From the repository root:) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 774 Td (Invoke-RestMethod http://127.0.0.1:8000/api/health) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 760 Td (python scripts/test_pipeline.py) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 746 Td (Set-Location frontend) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 732 Td (npm run build) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 718 Td (Set-Location ..) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 698 Td (The full pipeline test verifies scaffolding, preprocessing, FFT/statistics, fixed VMD,) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 684 Td (adaptive VMD, features, training, SHAP, prediction, history, and system status.) Tj
+0.04 0.35 0.38 rg /F1 12 Tf 42 664 Td (4. Train or refresh a model) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 644 Td (The included training script uses the sample healthy and faulty bearing fixtures:) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 624 Td (python scripts/train_model.py) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 604 Td (Supported model names in the Python trainer are:) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 584 Td (- `Random Forest`) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 570 Td (- `Gradient Boosting`) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 556 Td (- `SVM`) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 542 Td (- `Logistic Regression`) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 522 Td (The active bundle is written to `models\\`:) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 502 Td (- `model.joblib`) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 488 Td (- `scaler.joblib`) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 474 Td (- `feature_schema.json`) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 460 Td (- `training_metadata.json`) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 446 Td (- `label_encoder.joblib`) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 426 Td (Previous bundles are archived under `models\\versions\\vX.Y.Z\\`.) Tj
+0.04 0.35 0.38 rg /F1 12 Tf 42 406 Td (5. Analyze a CSV signal) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 386 Td (The CSV needs a numeric `vibration` column, or another numeric column that can be selected) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 372 Td (explicitly by the adapter. Minimum length is 128 samples.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 352 Td (The browser flow is:) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 332 Td (1. Open Signal Lab.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 318 Td (2. Select a `.csv` or `.txt` file.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 304 Td (3. Inspect processed waveform, FFT preview, RMS, and dominant frequency.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 290 Td (4. Select Run diagnosis to call the prediction API with the same file.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 270 Td (PowerShell API example:) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 250 Td ($form = @{ file = Get-Item .\\ml\\data\\sample\\faulty_bearing.csv }) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 3170 >>
+stream
+BT
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 800 Td (Invoke-RestMethod -Uri http://127.0.0.1:8000/api/v1/signal/upload -Method Post -Form $form) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 786 Td (Invoke-RestMethod -Uri http://127.0.0.1:8000/api/v1/predict/file -Method Post -Form $form) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 766 Td (Unknown RPM, load, and machine ID values remain `Unknown / Not Provided`; they are never) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 752 Td (invented.) Tj
+0.04 0.35 0.38 rg /F1 12 Tf 42 732 Td (6. Connect VMD Explorer) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 712 Td (The backend endpoints are already available:) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 692 Td (POST /api/v1/vmd/decompose) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 678 Td (POST /api/v1/vmd/optimize) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 658 Td (Both accept JSON with at least 128 signal samples:) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 638 Td ({) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 624 Td (  "signal": [0.1, 0.2, 0.0],) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 610 Td (  "sampling_rate": 12000,) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 596 Td (  "K": 5,) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 582 Td (  "alpha": 2000,) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 568 Td (  "tau": 0,) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 554 Td (  "DC": 0) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 540 Td (}) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 520 Td (A real frontend VMD Explorer should:) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 500 Td (1. Reuse the selected signal kept by Signal Lab.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 486 Td (2. Call `/api/v1/vmd/optimize` for adaptive mode.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 472 Td (3. Render `initial_K`, `initial_alpha`, `initial_fitness`, `optimized_K`, `optimized_alpha`,) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 458 Td (and `optimized_fitness`.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 444 Td (4. Plot each `optimized_decomposition.imf_waveforms` series.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 430 Td (5. Render `imf_stats` for RMS, energy, kurtosis, dominant frequency, entropy, and center) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 416 Td (frequency.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 402 Td (6. Plot `trajectory` as fitness against candidate K/alpha values.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 388 Td (7. Label the result as a measured decomposition; never invent convergence or fitness values.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 368 Td (Example TypeScript call:) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 348 Td (const response = await fetch\('/api/v1/vmd/optimize', {) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 334 Td (  method: 'POST',) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 320 Td (  headers: { 'Content-Type': 'application/json' },) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 306 Td (  body: JSON.stringify\({ signal, sampling_rate: 12000, k_min: 3, k_max: 7 }\),) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 292 Td (}\);) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 278 Td (const result = await response.json\(\);) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 258 Td (The current UI labels VMD Explorer as `SERVER INTEGRATION PENDING`; it does not fabricate) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 244 Td (IMF results.) Tj
+0.04 0.35 0.38 rg /F1 12 Tf 42 224 Td (7. Connect Model Training) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 10 0 R >>
+endobj
+12 0 obj
+<< /Length 2883 >>
+stream
+BT
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 794 Td (The backend training endpoint is:) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 774 Td (POST /api/v1/system/train) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 754 Td (Request body:) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 734 Td ({ "model_name": "Random Forest" }) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 714 Td (PowerShell example:) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 694 Td (Invoke-RestMethod -Uri http://127.0.0.1:8000/api/v1/system/train -Method Post -ContentType) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 680 Td ('application/json' -Body '{"model_name":"Random Forest"}') Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 660 Td (A real frontend training page should:) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 640 Td (1. Provide a model selector using the four supported names.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 626 Td (2. POST the selected model to `/api/v1/system/train`.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 612 Td (3. Show a loading state while training runs.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 598 Td (4. Render returned metadata: version, accuracy, precision, recall, macro-F1, ROC-AUC,) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 584 Td (confusion matrix, and sample counts.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 570 Td (5. Refresh `/api/v1/system/status` after success.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 556 Td (6. Show failures as actionable errors, not raw stack traces.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 536 Td (The current UI labels Model Training as `SERVER INTEGRATION PENDING`; no training metrics) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 522 Td (are fabricated.) Tj
+0.04 0.35 0.38 rg /F1 12 Tf 42 502 Td (8. Useful API calls) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 482 Td (Invoke-RestMethod http://127.0.0.1:8000/api/v1/system/status) Tj
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 468 Td (Invoke-RestMethod 'http://127.0.0.1:8000/api/v1/predict/history?limit=20') Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 448 Td (Interactive Swagger testing is available at http://127.0.0.1:8000/docs.) Tj
+0.04 0.35 0.38 rg /F1 12 Tf 42 428 Td (9. Troubleshooting) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 408 Td (**Frontend says API OFFLINE**) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 388 Td (- Confirm Uvicorn is running on port 8000.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 374 Td (- Confirm Vite is running on port 5173.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 360 Td (- Check that the frontend proxy in `frontend\\vite.config.ts` targets `http://localhost:8000`.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 340 Td (**Upload returns 400 or 422**) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 320 Td (- Use `.csv` or `.txt`.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 306 Td (- Include at least 128 numeric vibration samples.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 292 Td (- Remove NaN and infinite values.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 278 Td (- Provide a numeric vibration column.) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 258 Td (**Model files are missing**) Tj
+ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 12 0 R >>
+endobj
+14 0 obj
+<< /Length 1066 >>
+stream
+BT
+0.08 0.20 0.22 rg /F2 7.5 Tf 42 794 Td (python scripts/train_model.py) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 774 Td (**The model score is not a calibrated probability**) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 754 Td (Treat confidence as a model score unless the model and calibration procedure explicitly) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 740 Td (guarantee calibrated probabilities.) Tj
+0.04 0.35 0.38 rg /F1 12 Tf 42 720 Td (10. Engineering disclaimers) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 700 Td (The machine health score is an adjustable engineering heuristic, not a certified safety) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 686 Td (metric. SHAP values describe which features contributed most strongly to a model prediction;) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 672 Td (they do not prove physical causation. Adaptive VMD optimization is measured by the) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 658 Td (documented fitness function and must not be described as improving classification accuracy) Tj
+0.10 0.22 0.24 rg /F3 8.5 Tf 42 644 Td (without a controlled experiment.) Tj
+ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 14 0 R >>
+endobj
+xref
+0 16
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000148 00000 n 
+0000000218 00000 n 
+0000000286 00000 n 
+0000000361 00000 n 
+0000002857 00000 n 
+0000003003 00000 n 
+0000005806 00000 n 
+0000005952 00000 n 
+0000009175 00000 n 
+0000009323 00000 n 
+0000012259 00000 n 
+0000012407 00000 n 
+0000013526 00000 n 
+trailer
+<< /Size 16 /Root 1 0 R >>
+startxref
+13674
+%%EOF

@@ -1,0 +1,28 @@
+{
+  "model_name": "Random Forest",
+  "version": "v1.0.3",
+  "accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1_score": 1.0,
+  "macro_f1": 1.0,
+  "roc_auc": 1.0,
+  "confusion_matrix": [
+    [
+      2,
+      0
+    ],
+    [
+      0,
+      2
+    ]
+  ],
+  "classes": [
+    "Inner Race Fault",
+    "Normal"
+  ],
+  "feature_count": 101,
+  "split_strategy": "GroupShuffleSplit (grouped by machine run)",
+  "training_samples": 10,
+  "test_samples": 4
+}
